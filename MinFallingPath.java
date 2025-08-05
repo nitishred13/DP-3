@@ -1,5 +1,10 @@
 
+// This problem can be approached by solving smaller sub problems.Each sub problem is to calculate 
+// the maximum sum upto that cell based on adjacent cell constraint and row index
+// Idea is to use DP and store these sub problem(based on 2 parameters) results in a 2D matrix.
 
+//Time Complexity: O(nxn)
+//Space Complexity: O(nxn)
 public class MinFallingPath {
         public int minFallingPathSum(int[][] matrix) {
         int len = matrix.length;
@@ -12,7 +17,6 @@ public class MinFallingPath {
             dp[0][j] = matrix[0][j];
         }
 
-        // Fill the DP table row by row
         for (int i = 1; i < len; i++) {
             for (int j = 0; j < len; j++) {
                 int minPathFromAbove = dp[i-1][j];
